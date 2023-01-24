@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+<link rel="stylesheet" href='{% static "css/demo.css" %}'>
+</head>
+<body>
+{%block baseblock %}
+{% if obj %}
+<table  align="center" style="width:50%" border="1" class="table table-hover">
+    <h3 align="center"> Employee Details</h3>
+    <thead class="thead-dark">
+
+    <th> name </th>
+    <th> age </th>
+    <th> email </th>
+    <th> date </th>
+
+    </thead>
+    {% for lap in obj %}
+    <tr>
+        <td>{{lap.name}}</td>
+        <td>{{lap.age}}</td>
+        <td>{{lap.email}}</td>
+        <td>{{lap.date}}</td>
+        <td><a href="/delete/{{lap.id}}">delete</a></td>
+        <td><a href="/update/{{lap.id}}">update</a></td>
+
+
+
+    </tr>
+    {% endfor%}
+</table>
+{%else%}
+<h1> No data found</h1>
+{%endif%}
+<center><a href="/employ/form" class="btn btn-primary btn-lg">creat form</a>
+{%endblock%}
+</body>
+</html>

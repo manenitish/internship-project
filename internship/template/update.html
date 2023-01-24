@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+<div class="container" align="center">
+    <h1>update form</h1>
+    <form method="post">
+    {%csrf_token%}
+    name : <input type="text" name="name" value="{{obj.name}}">
+    <br><br>
+    age : <input type="text" name="age" value="{{obj.age}}">
+    <br><br>
+    email : <input type="text" name="email" value="{{obj.email}}">
+    <br><br>
+    date : <input type="text" name="date" value="{{obj.date}}">
+    <br><br>
+    <input type="submit" class="btn btn-primary btn-lg" value="update form">
+
+{% endblock %}
+</body>
+</html>

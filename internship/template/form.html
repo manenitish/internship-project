@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block baseblock%}
+<div class="container" align="center">
+    <h3> employee details</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+{% endblock%}
+</body>
+</html>
